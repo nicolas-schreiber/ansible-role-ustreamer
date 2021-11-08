@@ -58,7 +58,7 @@
 
 - name: collect Raspberry Pi OS specific required apt packages
   set_fact:
-    ustreamer_packages: "{{ ustreamer_packages }} + ['libjpeg8-dev']"
+    ustreamer_packages: "{{ ustreamer_packages }} + ['libjpeg9-dev']"
   when: ustreamer_is_os_raspbian
 
 - name: install libraspberrypi-dev if we're using OpenMax IL acceleration
@@ -73,7 +73,7 @@
 
 - name: collect Ubuntu-specific required apt packages
   set_fact:
-    ustreamer_packages: "{{ ustreamer_packages }} + ['gcc', 'libjpeg8', 'libjpeg-dev', 'libjpeg-turbo8', 'libuuid1', 'libbsd0', 'make']"
+    ustreamer_packages: "{{ ustreamer_packages }} + ['gcc', 'libjpeg9', 'libjpeg-dev', 'libjpeg-turbo8', 'libuuid1', 'libbsd0', 'make']"
   when: ansible_distribution == 'Ubuntu'
 
 - name: install uStreamer pre-requisite packages
